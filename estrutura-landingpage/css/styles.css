@@ -1,0 +1,234 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: #272725;
+    width: 100%;
+}
+
+header .logo a, header nav a {
+    color: #fffcf2;
+    text-decoration: none;
+    font-size: 25px;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+header .logo a:hover, header nav a:hover {
+    color: #c5a880;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #242423;
+    color: #fffcf2;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+.cta-btn {
+    background-color: #fffcf2;
+    color: #403d39;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #c5a880;
+}
+
+/* Properties Section */
+.properties {
+    text-align: center;
+    padding: 40px;
+    background-color: #f8f8f8;
+}
+
+.properties-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.property-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.property-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.property-info {
+    padding: 20px;
+}
+
+.property-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.property-info p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Estilo do preço */
+.property-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #222; /* Preto forte para destaque */
+    margin-top: 15px;
+    display: block;
+}
+
+
+/* Features Section */
+.features {
+    padding: 60px 40px;
+    background-color: #fffcf2;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.feature {
+    margin: 20px;
+    font-size: 1.2rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 40px;
+    text-align: center;
+    background-color: #333;
+    color: #fffcf2;
+}
+
+.contact a {
+    color: #fffcf2;
+    font-size: 18px;
+    text-decoration: none;
+    background-color: #403d39;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+
+.contact a:hover {
+    background-color: #c5a880;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: #333;
+    color: #fffcf2;
+    text-align: center;
+}
+
+/* Corretor Section */
+.corretor {
+    padding: 60px 40px;
+    background-color: #222220;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.corretor-content {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    align-items: center;
+    gap: 40px;
+}
+
+.corretor-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.corretor-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fffcf2;
+}
+
+.corretor-text p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #fffcf2;
+}
+
+.corretor-image {
+    flex: 1;
+    text-align: center;
+}
+
+.corretor-image img {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .corretor-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .corretor-text {
+        padding-right: 0;
+    }
+
+    .corretor-image img {
+        width: 80%;
+    }
+}
