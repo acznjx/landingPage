@@ -1,12 +1,16 @@
-/* Global styles */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&display=swap');
+
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #3a3a3a;
+    color: #fffcf2;
 }
 
-/* Header */
+/* Header (Top Bar) */
 header {
     display: flex;
     justify-content: center;
@@ -14,9 +18,11 @@ header {
     height: 100px;
     background-color: #272725;
     width: 100%;
+    position: relative; /* Garantir que o header fique visível */
+    z-index: 10; /* Colocar o header acima de outros elementos */
 }
 
-header .logo a, header nav a {
+header .logo a {
     color: #fffcf2;
     text-decoration: none;
     font-size: 25px;
@@ -24,49 +30,59 @@ header .logo a, header nav a {
     transition: color 0.3s ease;
 }
 
-header .logo a:hover, header nav a:hover {
+header .logo a:hover {
     color: #c5a880;
 }
 
 /* Hero Section */
 .hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #242423;
-    color: #fffcf2;
+    position: relative;
     text-align: center;
+    color: white;
+    overflow: hidden;
+    margin-top: 0; /* Remover qualquer margem extra em cima */
 }
 
-.hero h1 {
-    font-size: 3rem;
+.hero-image {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background: url('../src/banner.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 95%, 0% 80%);
+    border-bottom: 5px solid #3a3a3a;
+    background-color: #3a3a3a;
+    z-index: 1;
 }
 
-.hero p {
-    font-size: 1.2rem;
+.hero-phrase {
+    font-family: "Playfair Display SC", sans-serif;
+    font-size: 48px;
+    font-weight: 700; /* Bold */
+    text-transform: uppercase;
+    z-index: 2; /* Garantir que a frase esteja acima da imagem */
+    position: relative;
+    color: #fffcf2; /* Cor da frase para garantir contraste */
 }
 
-.cta-btn {
-    background-color: #fffcf2;
-    color: #403d39;
-    padding: 15px 30px;
-    font-size: 18px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-}
+/* Responsiveness */
+@media (max-width: 768px) {
+    .hero-image {
+        height: 60vh; /* Ajuste de altura para telas menores */
+        clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0% 90%);
+    }
 
-.cta-btn:hover {
-    background-color: #c5a880;
+    .hero-phrase {
+        font-size: 1.5rem;
+    }
 }
 
 /* Properties Section */
 .properties {
     text-align: center;
     padding: 40px;
-    background-color: #f8f8f8;
 }
 
 .properties-container {
@@ -77,14 +93,13 @@ header .logo a:hover, header nav a:hover {
 }
 
 .property-card {
-    background: #fff;
+    background: #2e2e2e;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 350px;
     text-align: center;
     transition: transform 0.3s ease-in-out;
-    position: relative;
     padding-bottom: 20px;
 }
 
@@ -106,29 +121,95 @@ header .logo a:hover, header nav a:hover {
 .property-info h3 {
     font-size: 22px;
     margin-bottom: 10px;
-    color: #333;
 }
 
 .property-info p {
     font-size: 16px;
-    color: #666;
+    color: #ccc;
     margin-bottom: 10px;
 }
 
-/* Estilo do preço */
 .property-price {
     font-size: 24px;
     font-weight: bold;
-    color: #222; /* Preto forte para destaque */
-    margin-top: 15px;
-    display: block;
+}
+
+/* Form Section */
+.form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background: #3a3a3a;
+}
+
+.form-container {
+    background: #2e2e2e;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #fffcf2;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    align-self: flex-start;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fffcf2;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+    background: #fffcf2;
+}
+
+.input-group textarea {
+    height: 120px;
+    resize: none;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: #c5a880;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #c5a880;
 }
 
 
 /* Features Section */
 .features {
     padding: 60px 40px;
-    background-color: #fffcf2;
     text-align: center;
 }
 
@@ -147,7 +228,6 @@ header .logo a:hover, header nav a:hover {
     padding: 60px 40px;
     text-align: center;
     background-color: #333;
-    color: #fffcf2;
 }
 
 .contact a {
@@ -167,14 +247,13 @@ header .logo a:hover, header nav a:hover {
 footer {
     padding: 20px;
     background-color: #333;
-    color: #fffcf2;
     text-align: center;
 }
 
 /* Corretor Section */
 .corretor {
     padding: 60px 40px;
-    background-color: #222220;
+    background-color: #3a3a3a;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -196,13 +275,11 @@ footer {
 .corretor-text h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #fffcf2;
 }
 
 .corretor-text p {
     font-size: 1.2rem;
     line-height: 1.5;
-    color: #fffcf2;
 }
 
 .corretor-image {
@@ -211,13 +288,14 @@ footer {
 }
 
 .corretor-image img {
-    width: 300px;
+    width: 400px;
     max-width: 100%;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsividade */
+
+/* Responsiveness for Corretor Section */
 @media (max-width: 768px) {
     .corretor-content {
         flex-direction: column;

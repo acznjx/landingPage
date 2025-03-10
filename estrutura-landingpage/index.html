@@ -13,18 +13,17 @@
     <div class="logo">
       <a href="#Servicos">Serviços</a>
       <a href="#Corretor">Corretor</a>
-      <a href="#Imoveis">Imóveis</a>
+      <a href="#properties">Imóveis</a>
       <a href="#Localizacao">Localização</a>
     </div>
   </header>
 
   <!-- Seção Hero -->
   <section class="hero">
-    <div>
-      <h1>Encontre a casa dos seus sonhos</h1>
-      <p>Navegue por nossas propriedades premium e encontre o lugar perfeito para você.</p>
-      <br>
-      <a href="#contato" class="cta-btn">Entre em contato</a>
+    <div class="hero-image">
+      <div class="hero-overlay">
+        <p class="hero-phrase">Seu novo lar está a um clique de distância</p>
+      </div>
     </div>
   </section>
 
@@ -75,33 +74,53 @@
     </div>
   </section>
 
-  <!-- Seção Benefícios -->
-  <section id="features" class="features">
-    <h2>Por que nos escolher?</h2>
-    <div class="feature">
-      <h3>Acompanhamento especializado</h3>
-      <p>Nossos corretores oferecem orientação profissional para ajudá-lo a encontrar o imóvel ideal.</p>
+  
+  <section class="form-section">
+    <div class="form-container">
+        <h2>Fale Conosco</h2>
+        <form>
+            <div class="input-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="input-group">
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
     </div>
-    <div class="feature">
-      <h3>Grande variedade</h3>
-      <p>Temos uma ampla seleção de imóveis, desde apartamentos até residências de alto padrão.</p>
-    </div>
-    <div class="feature">
-      <h3>Preços competitivos</h3>
-      <p>Nossos imóveis possuem preços justos e sem taxas ocultas.</p>
-    </div>
-  </section>
+</section>
 
   <!-- Seção Contato -->
   <section id="contato" class="contact">
-    <h2>Entre em contato</h2>
-    <p>Tem dúvidas? Fale conosco e retornaremos o mais breve possível!</p>
-    <a href="mailto:contato@imobiliaria.com" class="cta-btn">Enviar e-mail</a>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><img src="src/facebook.png" alt="Facebook"></a>
+      <a href="https://instagram.com" target="_blank"><img src="src/instagram.png" alt="Instagram"></a>
+      <a href="https://linkedin.com" target="_blank"><img src="src/linkedin.png" alt="LinkedIn"></a>
+    </div>
   </section>
 
   <!-- Rodapé -->
   <footer>
     <p>&copy; Todos os direitos reservados à WRA Imobiliária.</p>
+  </footer>
+
+  <!-- Rodapé -->
+  <footer>
+
   </footer>
 
 </body>
