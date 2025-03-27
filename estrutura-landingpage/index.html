@@ -8,120 +8,392 @@
 </head>
 <body>
 
-  <!-- Cabeçalho -->
-  <header>
+<!-- Cabeçalho -->
+<header>
+  <div class="header-container">
     <div class="logo">
-      <a href="#Servicos">Serviços</a>
+      <img src="src/logo/logo1.png" alt="Logo WRA Imobiliária" class="logo-img">
+    </div>
+
+    <nav class="nav-links">
+      <a href="#hero">Home</a>
       <a href="#Corretor">Corretor</a>
       <a href="#properties">Imóveis</a>
-      <a href="#Localizacao">Localização</a>
+      <a href="#contato">Contato</a> 
+    </nav>
+    
+    <div class="language-selection">
+      <img src="src/bandeiras/brasil.jpg" alt="Português Brasil" class="lang-icon" onclick="selectLanguage(this)">
+      <img src="src/bandeiras/estados unidos.png" alt="English" class="lang-icon" onclick="selectLanguage(this)">
+      <img src="src/bandeiras/espanha.jpg" alt="Español" class="lang-icon" onclick="selectLanguage(this)">
     </div>
-  </header>
-
-  <!-- Seção Hero -->
-  <section class="hero">
-    <div class="hero-image">
-      <div class="hero-overlay">
-        <p class="hero-phrase">Seu novo lar está a um clique de distância</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção Corretor -->
-  <section id="Corretor" class="corretor">
-    <div class="corretor-content">
-      <div class="corretor-text">
-        <h2>Ricardo Menezes</h2>
-        <p>Corretor de imóveis com mais de 15 anos de experiência no mercado. Especialista em investimentos imobiliários e no segmento de alto padrão, ele se destaca por sua abordagem estratégica e conhecimento aprofundado em análise de crédito.</p>
-        <p>Com certificações como CRECI 123456-SP e uma Certificação Internacional em Avaliação Imobiliária, Ricardo acompanha de perto as tendências do setor, ajudando clientes a tomar decisões assertivas. Atuando principalmente nas regiões de São Paulo e Rio de Janeiro, ele já auxiliou centenas de pessoas a encontrar o imóvel ideal, sempre com transparência e comprometimento.</p>
-      </div>
-      <div class="corretor-image">
-        <img src="src/profile.jpg" alt="Corretor de imóveis">
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção Imóveis -->
-  <section id="properties" class="properties">
-    <h2>Imóveis</h2>
-    <div class="properties-container">
-      <div class="property-card">
-        <img src="src/casa1.jpg" alt="4431 Le Reve Court">
-        <div class="property-info">
-          <h3>4431 Le Reve Court</h3>
-          <p>Kissimmee, Flórida 34746.</p>
-          <span class="property-price">$529,000</span>
-        </div>
-      </div>
-      
-      <div class="property-card">
-        <img src="src/casa2.jpg" alt="11206 Pixie Mandarin Court">
-        <div class="property-info">
-          <h3>11206 Pixie Mandarin Court</h3>
-          <p>Winter Garden, Flórida 34787</p>
-          <span class="property-price">$910,000</span>
-        </div>
-      </div>
-      
-      <div class="property-card">
-        <img src="src/casa3.jpg" alt="6591 N Roland Drive">
-        <div class="property-info">
-          <h3>6591 N Roland Drive</h3>
-          <p>Citrus Springs, Flórida 34433</p>
-          <span class="property-price">$274,900</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  </div>
+</header>
   
-  <section class="form-section">
-    <div class="form-container">
-        <h2>Fale Conosco</h2>
-        <form>
-            <div class="input-group">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
 
-            <div class="input-group">
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
+<!-- Ícones sociais -->
+<div class="social-icons">
+  <a href="https://www.instagram.com/wra.br" target="_blank">
+      <img src="src/redes/instagram.png" alt="Instagram">
+  </a>
+  <a href="https://wa.me/51992025166" target="_blank">
+      <img src="src/redes/whatsapp.png" alt="WhatsApp">
+  </a>
+  <a href="mailto:anacarolinacznj@gmail.com">
+      <img src="src/redes/email.png" alt="Email">
+  </a>
+</div>
 
-            <div class="input-group">
-                <label for="phone">Telefone:</label>
-                <input type="tel" id="phone" name="phone">
-            </div>
-
-            <div class="input-group">
-                <label for="message">Mensagem:</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-
-            <button type="submit">Enviar</button>
-        </form>
+<!-- Seção Hero -->
+<section id="hero" class="hero">
+  <div class="hero-video">
+    <video autoplay loop muted playsinline>
+      <source src="src/videos/orlando.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay">
+      <p class="hero-phrase">Seu novo lar está a um clique de distância</p>
     </div>
+  </div>
 </section>
 
-  <!-- Seção Contato -->
-  <section id="contato" class="contact">
-    <div class="social-icons">
-      <a href="https://facebook.com" target="_blank"><img src="src/facebook.png" alt="Facebook"></a>
-      <a href="https://instagram.com" target="_blank"><img src="src/instagram.png" alt="Instagram"></a>
-      <a href="https://linkedin.com" target="_blank"><img src="src/linkedin.png" alt="LinkedIn"></a>
+<br><br><br><br>
+
+
+<!-- Título do Carrossel sobre Negócios 
+<h2 id="#servicos" class="carousel-title">Serviços de Negócios e Imóveis</h2>
+
+<div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="card">
+        <img src="src/comprar.jpg" class="card-img-top" alt="Compra">
+        <div class="card-body">
+          <h5 class="card-title">Compra</h5>
+          <p class="card-text">Encontre o imóvel dos seus sonhos com as melhores ofertas do mercado.</p>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <!-- Rodapé -->
-  <footer>
-    <p>&copy; Todos os direitos reservados à WRA Imobiliária.</p>
-  </footer>
+    <div class="carousel-item">
+      <div class="card">
+        <img src="src/venda.jpg" class="card-img-top" alt="Venda">
+        <div class="card-body">
+          <h5 class="card-title">Venda</h5>
+          <p class="card-text">Venda seu imóvel com rapidez e segurança.</p>
+        </div>
+      </div>
+    </div>
 
-  <!-- Rodapé -->
-  <footer>
+    <div class="carousel-item">
+      <div class="card">
+        <img src="src/alugar.jpg" class="card-img-top" alt="Alugar">
+        <div class="card-body">
+          <h5 class="card-title">Alugar</h5>
+          <p class="card-text">Encontre as melhores opções de aluguel para você e sua família.</p>
+        </div>
+      </div>
+    </div>
 
-  </footer>
+    <div class="carousel-item">
+      <div class="card">
+        <img src="src/administrar-imovel.jpg" class="card-img-top" alt="Administrar um Imóvel">
+        <div class="card-body">
+          <h5 class="card-title">Administrar um Imóvel</h5>
+          <p class="card-text">Gerencie seu imóvel de forma eficiente e tranquila.</p>
+        </div>
+      </div>
+    </div>
 
+    <div class="carousel-item">
+      <div class="card">
+        <img src="src/comprar-um-negocio.jpg" class="card-img-top" alt="Comprar um Negócio">
+        <div class="card-body">
+          <h5 class="card-title">Comprar um Negócio</h5>
+          <p class="card-text">Invista no seu futuro com as melhores oportunidades de negócios.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="text-center">
+  <a href="https://wra-usa.com/" class="btn-saiba-mais">Saiba Mais</a>
+</div>-->
+
+
+<!-- Seção Corretor -->
+<section id="Corretor" class="corretor">
+  <div class="corretor-content">
+    <div class="corretor-text">
+      <h2>Ricardo Menezes</h2>
+      <p>Corretor de imóveis com mais de 15 anos de experiência no mercado. Especialista em investimentos imobiliários e no segmento de alto padrão, ele se destaca por sua abordagem estratégica e conhecimento aprofundado em análise de crédito.</p>
+      <p>Com certificações como CRECI 123456-SP e uma Certificação Internacional em Avaliação Imobiliária, Ricardo acompanha de perto as tendências do setor, ajudando clientes a tomar decisões assertivas. Atuando principalmente nas regiões de São Paulo e Rio de Janeiro, ele já auxiliou centenas de pessoas a encontrar o imóvel ideal, sempre com transparência e comprometimento.</p>
+    </div>
+    <div class="corretor-image">
+      <img src="src/profile.jpg" alt="Corretor de imóveis">
+    </div>
+  </div>
+</section>
+
+<br><br><br><br><br><br>
+
+<div class="container">
+  <h1>ENCONTRAR MINHA CASA EM ORLANDO</h1>
+  <p>Aqui você encontra a casa em Orlando perfeita para moradia ou investimento</p>
+  
+  <div class="filter">
+      <input type="text" id="city-input" placeholder="Cidade, CEP, Endereço ou ID do Imóvel">
+      <input type="number" id="min-price" placeholder="Preço Mínimo">
+      <input type="number" id="max-price" placeholder="Preço Máximo">
+      <input type="number" id="min-bedrooms" placeholder="Quartos">
+      <input type="number" id="min-bathrooms" placeholder="Banheiros">
+      <button onclick="filterProperties()">Buscar</button>
+  </div>
+</div>
+
+<!-- Seção Imóveis -->
+<section id="properties" class="properties">
+
+  <div class="properties-container">
+    <div class="property-card" data-price="529000" data-location="Kissimmee">
+      <img src="src/casas/casa1.jpg" alt="4431 Le Reve Court">
+      <div class="property-info">
+        <h3>4431 Le Reve Court</h3>
+        <p>Kissimmee, Flórida 34746.</p>
+        <span class="property-price">$529,000</span>
+      </div>
+    </div>
+
+    <div class="property-card" data-price="910000" data-location="Winter Garden">
+      <img src="src/casas/casa2.jpg" alt="11206 Pixie Mandarin Court">
+      <div class="property-info">
+        <h3>11206 Pixie Mandarin Court</h3>
+        <p>Winter Garden, Flórida 34787</p>
+        <span class="property-price">$910,000</span>
+      </div>
+    </div>
+
+    <div class="property-card" data-price="274900" data-location="Citrus Springs">
+      <img src="src/casas/casa3.jpg" alt="6591 N Roland Drive">
+      <div class="property-info">
+        <h3>6591 N Roland Drive</h3>
+        <p>Citrus Springs, Flórida 34433</p>
+        <span class="property-price">$274,900</span>
+      </div>
+    </div>
+
+    <div class="property-card" data-price="2650000" data-location="Windermere">
+      <img src="src/casas/casa4.jpg" alt="409 W 2nd Avenue">
+      <div class="property-info">
+        <h3>409 W 2nd Avenue</h3>
+        <p>Windermere, Florida 34786</p>
+        <span class="property-price">$2,650,000</span>
+      </div>
+    </div>
+
+    <div class="property-card" data-price="650000" data-location="Orlando">
+      <img src="src/casas/casa5.jpg" alt="9223 Shadow Pinar Court">
+      <div class="property-info">
+        <h3>9223 Shadow Pinar Court</h3>
+        <p>Orlando, Florida 32825</p>
+        <span class="property-price">$650,000</span>
+      </div>
+    </div>
+
+    <div class="property-card" data-price="460000" data-location="Ocala">
+      <img src="src/casas/casa6.jpg" alt="7181 SW 64th Street Road">
+      <div class="property-info">
+        <h3>7181 SW 64th Street Road</h3>
+        <p>Ocala, Florida 34474</p>
+        <span class="property-price">$460,000</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function filterProperties() {
+  const city = document.getElementById('city-input').value.toLowerCase();
+  const minPrice = parseFloat(document.getElementById('min-price').value) || 0;
+  const maxPrice = parseFloat(document.getElementById('max-price').value) || Infinity;
+  const minBedrooms = parseInt(document.getElementById('min-bedrooms').value) || 0;
+  const minBathrooms = parseInt(document.getElementById('min-bathrooms').value) || 0;
+
+  const propertyCards = document.querySelectorAll('.property-card');
+
+  propertyCards.forEach(card => {
+    const price = parseFloat(card.getAttribute('data-price'));
+    const location = card.getAttribute('data-location').toLowerCase();
+
+    const bedrooms = parseInt(card.getAttribute('data-bedrooms')) || 0;
+    const bathrooms = parseInt(card.getAttribute('data-bathrooms')) || 0;
+
+    const matchesCity = location.includes(city);
+    const matchesPrice = price >= minPrice && price <= maxPrice;
+    const matchesBedrooms = bedrooms >= minBedrooms;
+    const matchesBathrooms = bathrooms >= minBathrooms;
+
+    if (matchesCity && matchesPrice && matchesBedrooms && matchesBathrooms) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+
+<br><br><br><br><br>
+
+<section class="carousel-container">
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <div class="depoimento">
+        <div class="perfil-cliente">
+          <img src="src/depoimentos.jpg" alt="Ana Souza" class="foto-cliente">
+          <span class="cliente">ana_souza</span> <!-- Changed to username format -->
+        </div>
+        <p>"A experiência com a WRA Imobiliária foi incrível! Encontrei o imóvel dos meus sonhos com total suporte e transparência."</p>
+      </div>
+      <div class="depoimento">
+        <div class="perfil-cliente">
+          <img src="src/depoimentos.jpg" alt="Carlos Mendes" class="foto-cliente">
+          <span class="cliente">carlos_mendes</span> 
+        </div>
+        <p>"Profissionais altamente qualificados e atenciosos. Recomendo para quem busca segurança na compra do imóvel!"</p>
+      </div>
+      <div class="depoimento">
+        <div class="perfil-cliente">
+          <img src="src/depoimentos.jpg" alt="Fernanda Lima" class="foto-cliente">
+          <span class="cliente">fernanda_lima</span> 
+        </div>
+        <p>"Serviço excepcional! Desde o primeiro contato até a assinatura do contrato, tudo foi impecável."</p>
+      </div>
+      <div class="depoimento">
+        <div class="perfil-cliente">
+          <img src="src/depoimentos.jpg" alt="João Pereira" class="foto-cliente">
+          <span class="cliente">joao_pereira</span> 
+        </div>
+        <p>"A equipe da WRA foi muito atenciosa e me ajudou a encontrar um imóvel perfeito para minha família!"</p>
+      </div>
+      <div class="depoimento">
+        <div class="perfil-cliente">
+          <img src="src/depoimentos.jpg" alt="Mariana Santos" class="foto-cliente">
+          <span class="cliente">mariana_santos</span> 
+        </div>
+        <p>"Fiquei impressionada com a agilidade e profissionalismo. Excelente atendimento!"</p>
+      </div>
+      <div class="depoimento">
+        <div class="perfil-cliente">
+          <img src="src/depoimentos.jpg" alt="Ricardo Alves" class="foto-cliente">
+          <span class="cliente">ricardo_alves</span> 
+        </div>
+        <p>"Super recomendo! O processo foi simples e sem complicações, graças à equipe altamente qualificada."</p>
+      </div>
+      <div class="depoimento">
+        <div class="perfil-cliente">/
+          <img src="src/depoimentos.jpg" alt="Juliana Oliveira" class="foto-cliente">
+          <span class="cliente">juliana_oliveira</span> 
+        </div>
+        <p>"Excelente atendimento e muita atenção às minhas necessidades. Estou muito feliz com a compra!"</p>
+      </div>
+      <div class="depoimento">
+        <div class="perfil-cliente">
+          <img src="src/depoimentos.jpg" alt="Ricardo Souza" class="foto-cliente">
+          <span class="cliente">ricardo_souza</span>
+        <p>"Atendimento de primeira, todos muito atenciosos e profissionais. Aconselho a WRA para quem busca seriedade!"</p>
+      </div>
+      <div class="depoimento">
+        <div class="perfil-cliente">
+          <img src="src/depoimentos.jpg" alt="Paula Costa" class="foto-cliente">
+          <span class="cliente">paula_costa</span> 
+        </div>
+        <p>"A experiência foi excelente! A equipe é muito prestativa e o processo foi transparente e rápido."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  const carousel = document.querySelector('.carousel');
+  let clone = carousel.innerHTML;
+  carousel.innerHTML += clone;
+  let index = 0;
+  function moveCarousel() {
+    index++;
+    if (index >= 6) {
+      index = 0;
+      carousel.style.transition = 'none';
+      carousel.style.transform = `translateX(0)`;
+    } else {
+      carousel.style.transition = 'transform 1.5s ease-in-out';
+      carousel.style.transform = `translateX(-${index * 33.33}%)`;
+    }
+  }
+  setInterval(moveCarousel, 5000);
+</script>
+
+<br><br><br><br><br>
+
+<!-- Fale Conosco Section -->
+<div id="contato" class="contact-title">
+  Fale Conosco
+</div>
+
+<!-- Script for Bitrix24 Form -->
+<script data-b24-form="inline/1/xmpn45" data-skip-moving="true">
+  (function(w,d,u){
+    var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+    var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+  })(window,document,'https://cdn.bitrix24.com/b29483423/crm/form/loader_1.js');
+</script>
+
+
+<br><br><br><br><br>
+
+<script>
+  (function(w,d,u){
+          var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
+          var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+  })(window,document,'https://cdn.bitrix24.com/b29483423/crm/site_button/loader_7_kcc4ts.js');
+</script>
+
+<!-- Footer -->
+<footer>
+  <!-- Seção da esquerda: Logo e informações sobre a empresa -->
+  <div class="footer-left">
+    <img src="src/logo/logo2.png" alt="WRA Imobiliária" class="footer-logo">
+    <h3>Nossa História</h3>
+    <p>A WRA é referência no mercado imobiliário de Orlando, conectando clientes a oportunidades únicas na Flórida. Com uma equipe experiente, oferecemos assessoria completa para quem deseja comprar imóveis residenciais ou comerciais.</p>
+<span>Além da consultoria na aquisição de propriedades, também gerenciamos locações e manutenção, garantindo segurança e tranquilidade para nossos clientes.</span>
+    <p>&copy; 2025 by WRA Imobiliária</p> 
+  </div>
+  
+  <!-- Seção do centro: Informações de contato -->
+  <div class="footer-center">
+    <p>
+      <img src="src/redes/endereço-footer.png" alt="Endereço">
+      7065 Westpointe Blvd, Suite 102, <br> Orlando, FL 32835, USA
+    </p>
+    <p>
+      <img src="src/redes/telefone-footer.png" alt="Telefone">
+      <a href="tel:+14079658276">(407) 965-8276</a>
+    </p>
+    <p>
+      <img src="src/redes/email-footer.png" alt="Email">
+      <a href="mailto:contactus@wra-usa.com">contactus@wra-usa.com</a>
+    </p>
+  </div>
+
+  <!-- Seção inferior: Direitos autorais à esquerda e links à direita -->
+  <div class="footer-right">
+    <p><a href="#">Carreiras</a> | <a href="#">Política de Privacidade</a></p>
+    <!-- Mapa -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.7660032809445!2d-81.48492292378181!3d28.516687075728175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e778db5619df69%3A0xb664b864ee4a344c!2sWRA%20BUSINESS%20%26%20REAL%20ESTATE!5e0!3m2!1spt-PT!2sbr!4v1742916320265!5m2!1spt-PT!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</footer>
+
+    <script src="js/script.js"></script> 
 </body>
 </html>
