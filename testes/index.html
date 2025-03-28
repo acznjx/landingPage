@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            transition: filter 0.3s ease;
+            position: relative;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+        .overlay.show {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .form-container {
+            background: #ffffff;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            position: absolute;
+            opacity: 0;
+            transform: scale(0.8) translateY(-50px);
+            transition: opacity 0.8s ease, transform 0.6s ease, box-shadow 0.3s ease;
+            z-index: 10;
+        }
+        .form-container.show {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+        .form-container h3 {
+            margin-bottom: 15px;
+            font-size: 24px;
+            color: #1a1a2e;
+            font-weight: 600;
+        }
+        .form-container p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 14px;
+            margin: 12px 0;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        .form-container input:focus {
+            border-color: #0077b6;
+            outline: none;
+        }
+        .form-container button {
+            width: -20%;
+            padding: 14px;
+            border: none;
+            background: #0077b6;
+            color: white;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .form-container button:hover {
+            background: #005f8f;
+            transform: scale(1.05);
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            font-size: 14px;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .close-btn:hover {
+            background: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="form-container" id="contactForm">
+        <button class="close-btn" onclick="toggleForm()">×</button>
+        <h3>Entre em contato conosco</h3>
+        <p>Apenas preencha o formulário que entraremos em contato.</p>
+        <input type="text" placeholder="Nome" required>
+        <input type="tel" placeholder="Número" required>
+        <input type="email" placeholder="Email" required>
+        <button type="submit">Enviar</button>
+    </div>
+    
+    <script>
+        // Função que executa a animação ao carregar a página ou dar refresh
+        document.addEventListener("DOMContentLoaded", function() {
+            // Exibe o formulário com animação de entrada
+            setTimeout(() => {
+                document.getElementById("contactForm").classList.add("show");
+                document.getElementById("overlay").classList.add("show");
+            }, 500); // Atraso de 500ms para a animação de transição
+        });
+        
+        function toggleForm() {
+            let form = document.getElementById("contactForm");
+            let overlay = document.getElementById("overlay");
+
+            // Animação de fechamento
+            form.style.opacity = "0";
+            form.style.transform = "scale(0.8) translateY(-50px)";
+            overlay.classList.remove("show");
+
+            setTimeout(() => {
+                form.style.display = "none"; // Esconde o formulário após a animação
+            }, 500);
+        }
+    </script>
+</body>
+</html>

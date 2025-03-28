@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WRA | Imobiliária</title>
+  <link rel="icon" type="image/png" href="src/favicon.png">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -212,37 +213,6 @@
   </div>
 </section>
 
-<script>
-function filterProperties() {
-  const city = document.getElementById('city-input').value.toLowerCase();
-  const minPrice = parseFloat(document.getElementById('min-price').value) || 0;
-  const maxPrice = parseFloat(document.getElementById('max-price').value) || Infinity;
-  const minBedrooms = parseInt(document.getElementById('min-bedrooms').value) || 0;
-  const minBathrooms = parseInt(document.getElementById('min-bathrooms').value) || 0;
-
-  const propertyCards = document.querySelectorAll('.property-card');
-
-  propertyCards.forEach(card => {
-    const price = parseFloat(card.getAttribute('data-price'));
-    const location = card.getAttribute('data-location').toLowerCase();
-
-    const bedrooms = parseInt(card.getAttribute('data-bedrooms')) || 0;
-    const bathrooms = parseInt(card.getAttribute('data-bathrooms')) || 0;
-
-    const matchesCity = location.includes(city);
-    const matchesPrice = price >= minPrice && price <= maxPrice;
-    const matchesBedrooms = bedrooms >= minBedrooms;
-    const matchesBathrooms = bathrooms >= minBathrooms;
-
-    if (matchesCity && matchesPrice && matchesBedrooms && matchesBathrooms) {
-      card.style.display = 'block';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-}
-</script>
-
 <br><br><br><br><br>
 
 <section class="carousel-container">
@@ -314,27 +284,21 @@ function filterProperties() {
   </div>
 </section>
 
-
-<script>
-  const carousel = document.querySelector('.carousel');
-  let clone = carousel.innerHTML;
-  carousel.innerHTML += clone;
-  let index = 0;
-  function moveCarousel() {
-    index++;
-    if (index >= 6) {
-      index = 0;
-      carousel.style.transition = 'none';
-      carousel.style.transform = `translateX(0)`;
-    } else {
-      carousel.style.transition = 'transform 1.5s ease-in-out';
-      carousel.style.transform = `translateX(-${index * 33.33}%)`;
-    }
-  }
-  setInterval(moveCarousel, 5000);
-</script>
-
 <br><br><br><br><br>
+
+<!-- Formulário de Contato Flutuante -->
+<div class="form-overlay" id="overlay"></div>
+<div class="form-popup" id="contactForm">
+    <button class="form-close-btn" onclick="toggleForm()">×</button>
+    <h3>Entre em contato conosco</h3>
+    <p>Apenas preencha o formulário que entraremos em contato.</p>
+    <input type="text" id="name" placeholder="Nome" required>
+    <input type="tel" id="number" placeholder="Número" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <button type="button" onclick="submitForm()">Enviar</button>
+</div>
+
+
 
 <!-- Fale Conosco Section -->
 <div id="contato" class="contact-title">
