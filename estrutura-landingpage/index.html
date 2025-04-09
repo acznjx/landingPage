@@ -30,7 +30,7 @@
     </div>
   </div>
 </header>
-  
+
 
 <!-- Ícones sociais -->
 <div class="social-icons">
@@ -43,6 +43,52 @@
   <a href="mailto:anacarolinacznj@gmail.com">
       <img src="src/redes/email.png" alt="Email">
   </a>
+</div>
+
+<!-- Banner de Cookies Elegante -->
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-container">
+    <p class="cookie-message">
+      Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa
+      <a href="privacidades/cookie.html" target="_blank" class="cookie-link">Política de Cookies</a>.
+    </p>
+    <div class="cookie-buttons">
+      <button id="accept-cookies" class="btn accept">Aceitar todos</button>
+      <button id="decline-cookies" class="btn decline">Recusar</button>
+      <button id="customize-cookies" class="btn customize">Personalizar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de personalização -->
+<div id="cookie-modal" class="cookie-modal hidden">
+  <div class="cookie-modal-content">
+    <h2 class="modal-title">Gerenciar Preferências de Cookies</h2>
+    <form id="cookie-form" class="cookie-form">
+      <div class="cookie-option">
+        <label>
+          <input type="checkbox" name="essentials" checked disabled />
+          <strong>Essenciais</strong> – Necessários para o funcionamento do site.
+        </label>
+      </div>
+      <div class="cookie-option">
+        <label>
+          <input type="checkbox" name="analytics" />
+          <strong>Análise</strong> – Ajuda a entender como o site é utilizado.
+        </label>
+      </div>
+      <div class="cookie-option">
+        <label>
+          <input type="checkbox" name="marketing" />
+          <strong>Marketing</strong> – Permite exibir anúncios personalizados.
+        </label>
+      </div>
+      <div class="modal-actions">
+        <button type="button" id="cancel-modal" class="btn decline">Cancelar</button>
+        <button type="submit" class="btn accept">Salvar Preferências</button>
+      </div>
+    </form>
+  </div>
 </div>
 
 <!-- Seção Hero -->
@@ -330,7 +376,7 @@
     <img src="src/logo/logo2.png" alt="WRA Imobiliária" class="footer-logo">
     <h3>Nossa História</h3>
     <p>A WRA é referência no mercado imobiliário de Orlando, conectando clientes a oportunidades únicas na Flórida. Com uma equipe experiente, oferecemos assessoria completa para quem deseja comprar imóveis residenciais ou comerciais.</p>
-<span>Além da consultoria na aquisição de propriedades, também gerenciamos locações e manutenção, garantindo segurança e tranquilidade para nossos clientes.</span>
+    <span>Além da consultoria na aquisição de propriedades, também gerenciamos locações e manutenção, garantindo segurança e tranquilidade para nossos clientes.</span>
     <p>&copy; 2025 by WRA Imobiliária</p> 
   </div>
   
@@ -350,13 +396,27 @@
     </p>
   </div>
 
-  <!-- Seção inferior: Direitos autorais à esquerda e links à direita -->
+  <!-- Seção da direita: Links e mapa -->
   <div class="footer-right">
-    <p><a href="#">Carreiras</a> | <a href="#">Política de Privacidade</a></p>
-    <!-- Mapa -->
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.7660032809445!2d-81.48492292378181!3d28.516687075728175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e778db5619df69%3A0xb664b864ee4a344c!2sWRA%20BUSINESS%20%26%20REAL%20ESTATE!5e0!3m2!1spt-PT!2sbr!4v1742916320265!5m2!1spt-PT!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="footer-links-and-map">
+      <p>
+        <a href="privacidades/carreira.html" target="_blank" rel="noopener noreferrer">
+          Carreiras
+        </a> |
+        <a href="privacidades/privacidades.html" target="_blank" rel="noopener noreferrer">
+          Política de Privacidade
+        </a>
+      </p>
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.7660032809445!2d-81.48492292378181!3d28.516687075728175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e778db5619df69%3A0xb664b864ee4a344c!2sWRA%20BUSINESS%20%26%20REAL%20ESTATE!5e0!3m2!1spt-PT!2sbr!4v1742916320265!5m2!1spt-PT!2sbr"
+        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
   </div>
 </footer>
+
 
     <script src="js/script.js"></script> 
 </body>

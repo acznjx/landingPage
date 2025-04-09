@@ -165,3 +165,49 @@ function submitForm() {
 }
 
 // Formulário Flutuante
+
+
+const banner = document.getElementById('cookie-banner');
+const modal = document.getElementById('cookie-modal');
+const form = document.getElementById('cookie-form');
+
+document.getElementById('accept-cookies').addEventListener('click', () => {
+  savePreferences({ essentials: true, analytics: true, marketing: true });
+  banner.style.display = 'none';
+});
+
+document.getElementById('decline-cookies').addEventListener('click', () => {
+  savePreferences({ essentials: true, analytics: false, marketing: false });
+  banner.style.display = 'none';
+});
+
+document.getElementById('customize-cookies').addEventListener('click', () => {
+  modal.classList.remove('hidden');
+});
+
+document.getElementById('cancel-modal').addEventListener('click', () => {
+  modal.classList.add('hidden');
+});
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const preferences = {
+    essentials: true,
+    analytics: form.analytics.checked,
+    marketing: form.marketing.checked,
+  };
+  savePreferences(preferences);
+  modal.classList.add('hidden');
+  banner.style.display = 'none';
+});
+
+function savePreferences(prefs) {
+  localStorage.setItem('cookiePreferences', JSON.stringify(prefs));
+}
+
+// Auto-hide banner if already accepted
+window.addEventListener('load', () => {
+  const saved = localStorage.getItem('cookiePreferences');
+  if (saved) banner.style.display = 'none';
+});
+

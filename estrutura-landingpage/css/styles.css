@@ -117,7 +117,7 @@ header {
 }
 
 html {
-  scroll-behavior: smooth; /* Smooth scrolling for the whole page */
+  scroll-behavior: smooth; 
 }
 
 /* Hero Section */
@@ -132,12 +132,11 @@ html {
 .hero-video {
   position: relative;
   width: 100%;
-  height: 80vh; /* Adjust height for the hero section */
+  height: 80vh; 
   display: flex;
   align-items: center;
   justify-content: center;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 95%, 0% 80%); /* Creates a dynamic shape */
-  border-bottom: 5px solid #252422; /* Adds a border */
+  border-bottom: 5px solid #252422;
   background-color: #252422;
   z-index: 1;
   overflow: hidden;
@@ -146,11 +145,11 @@ html {
 .hero-video video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the video covers the area */
+  object-fit: cover; 
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1; /* Sends the video to the background */
+  z-index: -1; 
 }
 
 .hero-overlay {
@@ -284,18 +283,18 @@ input, select, button {
   margin: 5px;
   font-size: 16px;
   border-radius: 5px;
-  border: 1px solid rgb(242, 107, 54);
+  border: 1px solid #ecc509;
 }
 
 .filter button {
-  background-color: rgb(242, 107, 54);
+  background-color: #ecc509;
   color: #fffcf2;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .filter button:hover {
-  background-color: rgb(242, 107, 54);
+  background-color: #cfaf0f;
 }
 
 /* Properties */
@@ -405,7 +404,7 @@ input, select, button {
 }
 
 .b24-form-btn {
-  background-color: rgb(242, 107, 54) !important;
+  background-color: #f26b36 !important;
   color: #fffcf2 !important;
   font-size: 16px;
   padding: 12px;
@@ -414,7 +413,7 @@ input, select, button {
 }
 
 .b24-form-btn:hover {
-  background-color: rgb(216, 96, 48) !important;
+  background-color: #d15727 !important;
 }
 
 @media (max-width: 480px) {
@@ -577,7 +576,7 @@ html {
 }
 
 .form-popup input:focus {
-  border-color: #e74c3c;
+  border-color: #ecc509;
   outline: none;
 }
 
@@ -585,7 +584,7 @@ html {
   width: -20%;
   padding: 14px;
   border: none;
-  background: #e74c3c;
+  background: #ecc509;
   color: white;
   font-size: 18px;
   border-radius: 8px;
@@ -597,7 +596,7 @@ html {
   position: absolute;
   top: 5px;
   right: 5px;
-  background: #e74c3c;
+  background: #ddb907 ;
   color: white;
   border: none;
   font-size: 18px;
@@ -613,11 +612,10 @@ html {
 }
 
 .form-close-btn:hover {
-  background: #c0392b;
+  background: #ddb907;
 }
 
 
-/* Footer */
 footer {
   padding: 20px;
   background-color: #333;
@@ -652,25 +650,30 @@ footer div {
 }
 
 .footer-left p:last-child {
-  margin-top: 50px;
+  margin-top: 170px; /* aumente para dar mais distância do texto acima */
 }
+
 
 .footer-center {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center; /* Centraliza os itens como grupo */
+  justify-content: center;
+  text-align: left;    /* Alinha o texto para a esquerda */
   gap: 15px;
-  width: 100%;
 }
 
 .footer-center p {
   display: flex;
   align-items: center;
+  justify-content: flex-start; /* Alinha ícone + texto à esquerda */
   gap: 10px;
   width: 100%;
   word-wrap: break-word;
   line-height: 1.6;
+  text-align: left; /* Garante que o texto do parágrafo esteja à esquerda */
 }
+
 
 .footer-center p:first-child span {
   display: block;
@@ -684,14 +687,14 @@ footer div {
 }
 
 footer a {
-  color: rgb(242, 107, 54);
+  color: #ecc509;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 footer a:hover {
   text-decoration: underline;
-  color: rgb(242, 107, 54);
+  color: #ecc509;
 }
 
 .footer-right {
@@ -706,12 +709,12 @@ footer a:hover {
 }
 
 .footer-right a {
-  color: rgb(242, 107, 54);
+  color: #ecc509;
   margin: 0 10px;
 }
 
 .footer-right a:hover {
-  color: rgb(242, 107, 54);
+  color: #ecc509;
 }
 
 footer iframe {
@@ -747,6 +750,7 @@ footer iframe {
     max-width: 100%;
   }
 }
+
 
 /* Estilos para o carrossel 
 .carousel {
@@ -883,3 +887,138 @@ footer iframe {
 }
 */
 
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  border: 1px solid #e8c964;
+  border-radius: 12px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+  padding: 20px;
+  text-align: center;
+}
+
+.cookie-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.cookie-message {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+.cookie-link {
+  color: #e8c964;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.cookie-link:hover {
+  color: #e1bb68;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  font-weight: 600;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.accept {
+  background-color: #e8c964;
+  color: #072143;
+}
+
+.accept:hover {
+  background-color: #e1bb68;
+}
+
+.decline {
+  background-color: #ffffff;
+  color: #072143;
+}
+
+.decline:hover {
+  background-color: #f0f0f0;
+}
+
+.customize {
+  background: transparent;
+  color: #e8c964;
+  text-decoration: underline;
+}
+
+.customize:hover {
+  color: #e1bb68;
+}
+
+.cookie-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(7, 33, 67, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.cookie-modal.hidden {
+  display: none;
+}
+
+.cookie-modal-content {
+  background-color: #072143;
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  text-align: left;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  color: #e8c964;
+  margin-bottom: 20px;
+}
+
+.cookie-option {
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.cookie-option input {
+  margin-right: 10px;
+  transform: scale(1.1);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
