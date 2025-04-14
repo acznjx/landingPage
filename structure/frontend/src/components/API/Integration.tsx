@@ -1,3 +1,4 @@
+// src/components/Integration/Integration.tsx
 import React, { useEffect, useState } from 'react';
 import Property from './Property';
 import Filter from './Filter';
@@ -8,6 +9,10 @@ const Integration: React.FC = () => {
   const carregarImoveis = async (filtros = {}) => {
     try {
       const resposta = await fetch('http://localhost:3000/api/properties');
+      if (!resposta.ok) {
+        throw new Error(`Erro ao carregar imóveis: ${resposta.statusText}`);
+      }
+
       const json = await resposta.json();
       const dados = Object.values(json.data);
 
@@ -46,8 +51,8 @@ const Integration: React.FC = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-4">
-      <h1 className="text-3xl font-bold text-center text-gray-800 mt-8">
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold text-center text-gray-800 mb-4">
         ENCONTRAR MINHA CASA EM ORLANDO
       </h1>
       <p className="text-center text-gray-600 mb-6">
@@ -56,11 +61,11 @@ const Integration: React.FC = () => {
 
       <Filter onFilter={carregarImoveis} />
 
-      <div id="imoveis-container" className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+      <div id="imoveis-container" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
         {imoveis.length > 0 ? (
           imoveis.map((item, index) => <Property key={index} item={item} />)
         ) : (
-          <p className="text-white text-center col-span-3">Nenhum imóvel encontrado com os filtros aplicados.</p>
+          <p className="text-gray-600 text-center col-span-3">Nenhum imóvel encontrado com os filtros aplicados.</p>
         )}
       </div>
     </div>

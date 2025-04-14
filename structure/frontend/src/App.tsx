@@ -18,7 +18,7 @@ function App() {
     useEffect(() => {
       const container = document.querySelector<HTMLDivElement>('.depoimento-carousel');
       if (container) {
-        initCarousel(container);
+        scripts.initCarousel(container);
       }
     }, []);
   
