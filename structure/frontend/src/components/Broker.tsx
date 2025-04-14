@@ -1,5 +1,4 @@
 // src/components/Broker.tsx
-import React from 'react';
 import profileImg from '../assets/image/profile.jpg';
 
 const Broker = () => {

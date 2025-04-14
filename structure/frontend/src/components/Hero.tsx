@@ -1,5 +1,4 @@
 // src/components/Hero.tsx
-import React from 'react';
 import { Instagram, Mail, Phone } from 'lucide-react';
 import videoSrc from '../assets/image/orlando.mp4';
 
