@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { cn } from '../assets/scripts/utils';
-
+import { useState, useEffect } from 'react';
+import logo from '../assets/image/logo-TopBar.png';
 
 const TopBar = () => {
   const [selectedLang, setSelectedLang] = useState<string>('pt');
+  const [scrolled, setScrolled] = useState<boolean>(false);
 
   const languages = [
     { code: 'pt', label: 'Português', icon: '🇧🇷' },
@@ -11,33 +11,39 @@ const TopBar = () => {
     { code: 'es', label: 'Español', icon: '🇪🇸' },
   ];
 
-  const handleLangChange = (lang: string) => {
-    setSelectedLang(lang);
-      };
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur bg-[#252422cc] h-[100px] text-[#fffcf2]">
-      <div className="max-w-[1200px] mx-auto px-5 flex justify-between items-center h-full relative">
-        <div className="flex items-center ml-[-120px]">
-          <img src="/logo/logo1.png" alt="Logo WRA" className="h-[220px]" />
+    <header className={`top-bar ${scrolled ? 'scrolled' : ''}`}>
+      <div className="header-container">
+        {/* Logo */}
+        <div className="logo">
+          <img src={logo} alt="Logo" className="logo-img" />
         </div>
 
-        <nav className="absolute left-1/2 transform -translate-x-1/2 flex gap-8 text-[22px]">
-          <a href="#hero" className="hover:text-[#CCC5B9] transition-colors">Início</a>
-          <a href="#Corretor" className="hover:text-[#CCC5B9] transition-colors">Corretor</a>
-          <a href="#properties" className="hover:text-[#CCC5B9] transition-colors">Imóveis</a>
-          <a href="#contato" className="hover:text-[#CCC5B9] transition-colors">Contato</a>
+        {/* Navegação */}
+        <nav className="nav-links">
+          {['Início', 'Corretor', 'Imóveis', 'Contato'].map((label, idx) => {
+            const hrefs = ['#hero', '#Corretor', '#properties', '#contato'];
+            return (
+              <a key={label} href={hrefs[idx]}>
+                {label}
+              </a>
+            );
+          })}
         </nav>
 
-        <div className="absolute right-[-270px] flex gap-3">
+        {/* Idiomas */}
+        <div className="language-selection">
           {languages.map(({ code, icon }) => (
             <button
               key={code}
-              className={cn(
-                'text-xl opacity-50 hover:opacity-100 transition-all',
-                selectedLang === code && 'opacity-100 scale-110'
-              )}
-              onClick={() => handleLangChange(code)}
+              onClick={() => setSelectedLang(code)}
+              className={`lang-icon ${selectedLang === code ? 'selected' : ''}`}
               aria-label={`Selecionar ${code}`}
             >
               <span>{icon}</span>

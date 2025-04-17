@@ -50,23 +50,21 @@ export default function TestimonialsCarousel() {
   }, []);
 
   return (
-    <section className="w-[80%] mx-auto overflow-hidden flex justify-center items-center relative">
-      <div className="flex w-full" ref={carouselRef}>
-        <div className="flex transition-transform duration-[1500ms] ease-in-out w-full">
+    <section className="carousel-container">
+      <h2 className="carousel-title">O que nossos clientes dizem</h2>
+      <div className="carousel-wrapper" ref={carouselRef}>
+        <div className="carousel">
           {testimonials.map((item, index) => (
-            <div
-              key={index}
-              className="flex-none w-[calc(33.33%-30px)] mx-[15px] bg-[#403D39] rounded-xl shadow-md p-10 text-center h-[300px]"
-            >
-              <div className="flex flex-row items-center justify-center mb-4">
+            <div key={index} className="depoimento">
+              <div className="perfil-cliente">
                 <img
                   src={`https://ui-avatars.com/api/?name=${item.name}&background=403D39&color=fff`}
                   alt={item.name}
-                  className="w-[100px] h-[100px] rounded-full mr-4"
+                  className="foto-cliente"
                 />
-                <span className="text-[#fffcf2] text-lg font-bold uppercase">{item.name}</span>
+                <span className="cliente">{item.name}</span>
               </div>
-              <p className="text-[#fffcf2] text-base font-quicksand line-clamp-5">{item.text}</p>
+              <p>{item.text}</p>
             </div>
           ))}
         </div>
